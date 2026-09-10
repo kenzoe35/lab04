@@ -96,4 +96,15 @@ void findExtremes(const ScoreGrid& scores, int studentIndex,
  */
 [[nodiscard]] bool isAtRisk(const ScoreGrid& scores, int studentIndex);
 
+/**
+ * @brief Counts the amount of students that are at risk
+ */
+[[nodiscard]] int countAtRisk(const ScoreGrid& scores, int studentIndex);
+
+void findClassExtremes(const ScoreGrid&, int studentIndex);
+
+void applyCurve(const ScoreGrid&, int studentIndex);
+
+[[nodiscard]] int topStudent(const ScoreGrid&, int studentIndex);
+
 #endif
