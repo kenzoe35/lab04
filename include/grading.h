@@ -98,13 +98,49 @@ void findExtremes(const ScoreGrid& scores, int studentIndex,
 
 /**
  * @brief Counts the amount of students that are at risk
+ *
+ * @pre studentIndex is in range [0, STUDENT_COUNT).
+ * @post The number of students at risk
+ *
+ * @param[in] scores        The grade grid.
+ * @param[in] studentIndex  Row of the student to examine.
+ * @return the integer of students at risk
  */
 [[nodiscard]] int countAtRisk(const ScoreGrid& scores, int studentIndex);
 
-void findClassExtremes(const ScoreGrid&, int studentIndex);
+/**
+ * @brief Finds the lowest and highest grades along with the student
+ *
+ * @pre Assignment count is greater than 0
+ * @post Finds the highest and lowest grades
+ *
+ * @param[in] scores        The grade grid.
+ * @param[in] lowest        The grade recorded.
+ * @param[in] highest       The highest grade recorded.
+ * @param[in] lowestStudent The student with the lowest grade
+ * @param[in] highestStudent The student with the highest grade
+ */
+void findClassExtremes(const ScoreGrid& scores, double& lowest, double& highest, int& lowestStudent, int& highestStudent);
+/**
+ * @brief Adds an extra 5 points for every student's grade
+ *
+ * @pre Student average is less than 100
+ * @post Adds 5 to the student average with a max cap of 100
+ *
+ * @param[in] scores        The grade grid.
+ *
+ */
+void applyCurve(const ScoreGrid& scores);
 
-void applyCurve(const ScoreGrid&, int studentIndex);
-
-[[nodiscard]] int topStudent(const ScoreGrid&, int studentIndex);
+/**
+ * @brief Finds the student that has the highest average
+ *
+ * @pre Has to be the highest average student
+ * @post Prints the row of the student with the highest average
+ *
+ * @param[in] scores        The grade grid.
+ * @return the row of the student with the highest grade
+ */
+[[nodiscard]] int topStudent(const ScoreGrid& scores);
 
 #endif
