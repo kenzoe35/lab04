@@ -87,3 +87,19 @@ bool isAtRisk(const ScoreGrid& scores, int studentIndex) {
 
     return false;
 }
+
+int countAtRisk(const ScoreGrid& scores, int studentIndex) {
+
+}
+
+void findClassExtremes(const ScoreGrid& scores, double& lowest, double& highest, int& lowestStudent, int& highestStudent) {
+
+}
+
+void applyCurve(const ScoreGrid& scores) {
+
+}
+
+int topStudent(const ScoreGrid& scores) {
+
+}
