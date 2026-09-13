@@ -1,0 +1,99 @@
+FUNCTION:    countAtRisk
+MODULE:      grading
+RESPONSIBLE FOR:  Prints the amount of students in the class are at risk
+
+  PRE: Student Index > 0 and <= number of students - 1
+       isAtRisk is true
+  POST: Returns the number of students that are at risk
+  SIDE EFFECTS: NONE
+  RETURNS: The integer of students that are at risk
+
+  PARAMETERS:
+    name : style  — because (which contract line?)
+    isAtRisk: boolean
+    studentIndex: value
+    scores: const &
+
+  SIGNATURE: int countAtRisk(const ScoresGrid& scores);
+
+  HARD TO TEST BECAUSE: You have to check the output
+
+  TESTS:
+
+  Correctly finds the number at risk with multiple students
+  Correctly determines if a student is at risk with 1 student
+  Correctly returns 0 when no students are at risk
+  
+
+FUNCTION:    findClassExtremes
+MODULE:      grading
+RESPONSIBLE FOR: Looks through scores in grid and find the lowest and highest along with the student row
+
+  PRE: Assignment count is greater 0
+  POST: Finds the highest, lowest and the student index
+  SIDE EFFECTS: NONE
+  RETURNS: Lowest, highest and student row it came from
+
+  PARAMETERS:
+    name : style  — because (which contract line?)
+    scores: const & - the scores grid is not modified
+    studentIndex: value
+
+  SIGNATURE: void findClassExtremes(const ScoreGrid& scores, double& lowest, double& highest, int& lowestStudent, int& highestStudent);
+
+  HARD TO TEST BECAUSE: n/a
+
+  TEST:
+  Correctly finds class extremes when there is 1 student
+  Correctly finds class extremes when there are multiple students
+  Correctly finds class extremes when multiple students have the same highest/lowest
+  
+
+FUNCTION:    applyCurve
+MODULE:      grading
+RESPONSIBLE FOR:  Adds 5 to student grades less than 100
+
+  PRE: Student average is less than 100
+  POST: Changes studentAverage by a set amount with a max cap of 100
+  SIDE EFFECTS: Modifies studentAverage
+  RETURNS: NONE
+
+  PARAMETERS:
+    name : style  — because (which contract line?)
+    scores : const & the score grid is not modified
+    studentIndex: value
+
+  SIGNATURE: void applyCurve(const ScoreGrid& scores);
+
+  HARD TO TEST BECAUSE: You have to check the gradebook and see if the result has changed
+
+  TEST:
+  Resulting grades are not greater than 100
+  Applies curve correctly when there is 1 assignment
+  Applies curve correctly when there is 1 student
+  Applies curve correctly when there are multiple students
+  Applies curve correctly when there are multiple assignments
+  
+
+FUNCTION:    topStudent
+MODULE:      grading
+RESPONSIBLE FOR: Checking which student has the highest student average
+
+  PRE: Has to be the highest student average
+  POST: Returns the row index of that student
+  SIDE EFFECTS: NONE
+  RETURNS: The row where the student has the highest grade
+
+  PARAMETERS:
+    name : style  — because (which contract line?)
+    scores : const & the score grid is not modified
+    studentIndex: value
+
+  SIGNATURE: int topStudent(const ScoreGrid& scores);
+
+  HARD TO TEST BECAUSE: You have to rely on output and logic to figure out the error
+
+  TEST:
+  Returns the first student when two students have the same average
+  Returns index 0 when there is only 1 student
+  Returns the correct student when there are multiple students
