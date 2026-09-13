@@ -106,7 +106,7 @@ void findExtremes(const ScoreGrid& scores, int studentIndex,
  * @param[in] studentIndex  Row of the student to examine.
  * @return the integer of students at risk
  */
-[[nodiscard]] int countAtRisk(const ScoreGrid& scores, int studentIndex);
+[[nodiscard]] int countAtRisk(const ScoreGrid& scores);
 
 /**
  * @brief Finds the lowest and highest grades along with the student
@@ -130,7 +130,7 @@ void findClassExtremes(const ScoreGrid& scores, double& lowest, double& highest,
  * @param[in] scores        The grade grid.
  *
  */
-void applyCurve(const ScoreGrid& scores);
+void applyCurve(ScoreGrid& scores);
 
 /**
  * @brief Finds the student that has the highest average
